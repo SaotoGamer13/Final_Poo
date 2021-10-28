@@ -36,7 +36,7 @@ namespace almacen
                 {
                     case 1:
                         Console.WriteLine(" ingresar nombre del Producto : ");
-                        string nombrep = Console.ReadLine();
+                        string pnombre = Console.ReadLine();
                         Console.WriteLine("ingresar codigo del producto");
                         int pcodigo = int.Parse(Console.ReadLine());
                         Console.WriteLine("ingresar precio del producto");
@@ -44,27 +44,50 @@ namespace almacen
                         Console.WriteLine("elegir entre nacional e importada");
                         bool pimportado = bool.Parse(Console.ReadLine());
 
-                        Producto producto = new Producto(nombrep, pcodigo, pprecio, pimportado);
-                        productos.Add(producto);
+                        Producto producto = new Producto(pnombre, pcodigo, pprecio, pimportado);
+                        Almacen.productos.Add(producto);
 
                         break;
 
                     case 2:
                         Console.WriteLine(" ingresar nombre del kit");
-                        string nombrep = Console.ReadLine();
+                        string pnombre = Console.ReadLine();
                         Console.WriteLine("ingresar codigo del kit");
                         int pcodigo = int.Parse(Console.ReadLine());
                         Console.WriteLine("ingresar precio del kit");
                         int pprecio = int.Parse(Console.ReadLine());
 
-                        Producto producto = new Producto(nombrep, pcodigo, pprecio);
-                        productos.Add(producto);
+                        Pkits kit = new Pkits(pnombre, pcodigo, pprecio);
+                        kits.Add(kit);
                         break;
 
                     case 3:
-                        break;
 
+                        foreach (Producto result in productos)
+                        {
+                            Console.WriteLine("===========================================");
+                            Console.WriteLine("informacion del producto:");
+                            Console.WriteLine("Nombre del producto: " + result.pnombre);
+                            Console.WriteLine("Codigo del producto: " + result.pcodigo);
+                            Console.WriteLine("Precio del producto" + result.pprecio);
+                            Console.WriteLine("Importado? si.. Nacional? No: " + result.pimportado);
+                            Console.WriteLine("=============================================");
+                            
+                        }
+                        break;
                     case 4:
+                        foreach (Pkits result in kits)
+                        {
+                            Console.WriteLine("===========================================");
+                            Console.WriteLine("informacion del Kit:");
+                            Console.WriteLine("Nombre del Kit: " + result.pnombre);
+                            Console.WriteLine("Codigo del Kit: " + result.pcodigo);
+                            Console.WriteLine("Precio del Kit: " + result.pprecio);
+                            Console.WriteLine("=============================================");
+
+                        }
+
+
                         break;
 
                     case 5:
