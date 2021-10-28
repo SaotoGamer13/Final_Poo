@@ -50,6 +50,17 @@ namespace almacen
                         break;
 
                     case 2:
+                        Console.WriteLine("nombre Producto : ");
+                        string nombrep = Console.ReadLine();
+                        Console.WriteLine("numeros de horas requeridas para la instalacion");
+                        int nroHoras = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Cuanto es el costo por hora ");
+                        int costoHora = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Cuanto es el costo por hora ");
+                        int costoHora = int.Parse(Console.ReadLine());
+
+                        Producto producto = new Producto(nombrep, nroHoras, costoHora);
+                        productos.Add(producto);
                         break;
 
                     case 3:

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\juan\\source\\repos\\AlmacenDeportivo\\almacenImplementacion\\almacen\\almacen\\almacen.csproj": {}
+    "C:\\Users\\juan\\Documents\\GitHub\\Final_Poo\\almacen\\almacen\\almacen.csproj": {}
   },
   "projects": {
-    "C:\\Users\\juan\\source\\repos\\AlmacenDeportivo\\almacenImplementacion\\almacen\\almacen\\almacen.csproj": {
+    "C:\\Users\\juan\\Documents\\GitHub\\Final_Poo\\almacen\\almacen\\almacen.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\juan\\source\\repos\\AlmacenDeportivo\\almacenImplementacion\\almacen\\almacen\\almacen.csproj",
+        "projectUniqueName": "C:\\Users\\juan\\Documents\\GitHub\\Final_Poo\\almacen\\almacen\\almacen.csproj",
         "projectName": "almacen",
-        "projectPath": "C:\\Users\\juan\\source\\repos\\AlmacenDeportivo\\almacenImplementacion\\almacen\\almacen\\almacen.csproj",
+        "projectPath": "C:\\Users\\juan\\Documents\\GitHub\\Final_Poo\\almacen\\almacen\\almacen.csproj",
         "packagesPath": "C:\\Users\\juan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\juan\\source\\repos\\AlmacenDeportivo\\almacenImplementacion\\almacen\\almacen\\obj\\",
+        "outputPath": "C:\\Users\\juan\\Documents\\GitHub\\Final_Poo\\almacen\\almacen\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\juan\\AppData\\Roaming\\NuGet\\NuGet.Config",
