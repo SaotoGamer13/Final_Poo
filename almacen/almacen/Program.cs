@@ -35,31 +35,29 @@ namespace almacen
                 switch (valor)
                 {
                     case 1:
-                        Console.WriteLine("nombre Producto : ");
+                        Console.WriteLine(" ingresar nombre del Producto : ");
                         string nombrep = Console.ReadLine();
-                        Console.WriteLine("numeros de horas requeridas para la instalacion");
-                        int nroHoras = int.Parse(Console.ReadLine());
-                        Console.WriteLine("Cuanto es el costo por hora ");
-                        int costoHora = int.Parse(Console.ReadLine());
-                        Console.WriteLine("Cuanto es el costo por hora ");
-                        int costoHora = int.Parse(Console.ReadLine());
+                        Console.WriteLine("ingresar codigo del producto");
+                        int pcodigo = int.Parse(Console.ReadLine());
+                        Console.WriteLine("ingresar precio del producto");
+                        int pprecio = int.Parse(Console.ReadLine());
+                        Console.WriteLine("elegir entre nacional e importada");
+                        bool pimportado = bool.Parse(Console.ReadLine());
 
-                        Producto producto = new Producto(nombrep, nroHoras, costoHora);
+                        Producto producto = new Producto(nombrep, pcodigo, pprecio, pimportado);
                         productos.Add(producto);
 
                         break;
 
                     case 2:
-                        Console.WriteLine("nombre Producto : ");
+                        Console.WriteLine(" ingresar nombre del kit");
                         string nombrep = Console.ReadLine();
-                        Console.WriteLine("numeros de horas requeridas para la instalacion");
-                        int nroHoras = int.Parse(Console.ReadLine());
-                        Console.WriteLine("Cuanto es el costo por hora ");
-                        int costoHora = int.Parse(Console.ReadLine());
-                        Console.WriteLine("Cuanto es el costo por hora ");
-                        int costoHora = int.Parse(Console.ReadLine());
+                        Console.WriteLine("ingresar codigo del kit");
+                        int pcodigo = int.Parse(Console.ReadLine());
+                        Console.WriteLine("ingresar precio del kit");
+                        int pprecio = int.Parse(Console.ReadLine());
 
-                        Producto producto = new Producto(nombrep, nroHoras, costoHora);
+                        Producto producto = new Producto(nombrep, pcodigo, pprecio);
                         productos.Add(producto);
                         break;
 
