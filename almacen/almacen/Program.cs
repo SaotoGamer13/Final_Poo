@@ -103,9 +103,30 @@ namespace almacen
                         break;
 
                     case 9:
+                        foreach (Producto result in productos)
+                        {
+                            Console.WriteLine("===========================================");
+                            Console.WriteLine("informacion del producto:");
+                            Console.WriteLine("Nombre del producto: " + result.pnombre);
+                            Console.WriteLine("Codigo del producto: " + result.pcodigo);
+                            Console.WriteLine("Precio del producto" + result.pprecio);
+                            Console.WriteLine("Importado? si.. Nacional? No: " + result.pimportado);
+                            Console.WriteLine("=============================================");
+
+                        }
                         break;
 
                     case 10:
+                        foreach (Pkits result in kits)
+                        {
+                            Console.WriteLine("===========================================");
+                            Console.WriteLine("informacion del Kit:");
+                            Console.WriteLine("Nombre del Kit: " + result.pnombre);
+                            Console.WriteLine("Codigo del Kit: " + result.pcodigo);
+                            Console.WriteLine("Precio del Kit: " + result.pprecio);
+                            Console.WriteLine("=============================================");
+
+                        }
                         break;
 
                     case 11:
