@@ -13,9 +13,9 @@ namespace almacen
         private string direccion;
         private int telefono;
 
-        public cliente(string pnombre, int id, string direccion, int telefono)
+        public Cliente(string pnombre, int id, string direccion, int telefono)
         {
-            Pnombre = pnombre ?? throw new ArgumentNullException(nameof(pnombre));
+            this.Pnombre = pnombre ?? throw new ArgumentNullException(nameof(pnombre));
             this.id = id;
             this.direccion = direccion ?? throw new ArgumentNullException(nameof(direccion));
             this.telefono = telefono;

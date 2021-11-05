@@ -8,3 +8,14 @@ C:\Users\juan\Documents\GitHub\Final_Poo\almacen\almacen\obj\Debug\net5.0\almace
 C:\Users\juan\Documents\GitHub\Final_Poo\almacen\almacen\obj\Debug\net5.0\almacen.AssemblyInfoInputs.cache
 C:\Users\juan\Documents\GitHub\Final_Poo\almacen\almacen\obj\Debug\net5.0\almacen.AssemblyInfo.cs
 C:\Users\juan\Documents\GitHub\Final_Poo\almacen\almacen\obj\Debug\net5.0\almacen.csproj.CoreCompileInputs.cache
+C:\Users\juan\Documents\GitHub\Final_Poo\almacen\almacen\bin\Debug\net5.0\almacen.exe
+C:\Users\juan\Documents\GitHub\Final_Poo\almacen\almacen\bin\Debug\net5.0\almacen.deps.json
+C:\Users\juan\Documents\GitHub\Final_Poo\almacen\almacen\bin\Debug\net5.0\almacen.runtimeconfig.json
+C:\Users\juan\Documents\GitHub\Final_Poo\almacen\almacen\bin\Debug\net5.0\almacen.runtimeconfig.dev.json
+C:\Users\juan\Documents\GitHub\Final_Poo\almacen\almacen\bin\Debug\net5.0\almacen.dll
+C:\Users\juan\Documents\GitHub\Final_Poo\almacen\almacen\bin\Debug\net5.0\ref\almacen.dll
+C:\Users\juan\Documents\GitHub\Final_Poo\almacen\almacen\bin\Debug\net5.0\almacen.pdb
+C:\Users\juan\Documents\GitHub\Final_Poo\almacen\almacen\obj\Debug\net5.0\almacen.dll
+C:\Users\juan\Documents\GitHub\Final_Poo\almacen\almacen\obj\Debug\net5.0\ref\almacen.dll
+C:\Users\juan\Documents\GitHub\Final_Poo\almacen\almacen\obj\Debug\net5.0\almacen.pdb
+C:\Users\juan\Documents\GitHub\Final_Poo\almacen\almacen\obj\Debug\net5.0\almacen.genruntimeconfig.cache

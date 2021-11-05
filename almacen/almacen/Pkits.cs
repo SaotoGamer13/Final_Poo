@@ -13,12 +13,13 @@ namespace almacen
         private int kcodigo;
         private int kprecio;
 
-        public Pkits(string knombre, int kcodigo, int kprecio)
+        public Pkits(string knombre, int kcodigo, int kprecio, string pnombre, int pcodigo, int pprecio, bool pimportado) : base(pnombre, pcodigo, pprecio, pimportado)
         {
-            this.knombre = knombre;
+            this.knombre = knombre ?? throw new ArgumentNullException(nameof(knombre));
             this.kcodigo = kcodigo;
             this.kprecio = kprecio;
         }
+
 
         public string Knombre { get => knombre; set => knombre = value; }
         public int Kcodigo { get => kcodigo; set => kcodigo = value; }

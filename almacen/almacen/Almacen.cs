@@ -14,8 +14,11 @@ namespace almacen
         private List<Producto> productos = new List<Producto>();
         private List<Venta> ventas = new List<Venta>();
         private List<Compra> compras = new List<Compra>();
+        private List<Pindividual> pindividuals = new List<Pindividual>();
 
-        public Almacen(string nombre, int id,List<Producto> productos, List<Venta> ventas, List<Compra> compras, List<Pkits> kits)
+        private static int auxiliar;
+
+        public Almacen(string nombre, int id,List<Producto> productos, List<Venta> ventas, List<Compra> compras, List<Pkits> kits, List<Pindividual> pindividuals)
         {
             this.nombre = nombre ?? throw new ArgumentNullException(nameof(nombre));
             this.id = id;
@@ -23,6 +26,7 @@ namespace almacen
             this.ventas = ventas ?? throw new ArgumentNullException(nameof(ventas));
             this.compras = compras ?? throw new ArgumentNullException(nameof(compras));
             this.kits = kits ?? throw new ArgumentNullException(nameof(kits));
+            this.pindividuals = pindividuals ?? throw new ArgumentNullException(nameof(pindividuals));
         }
 
         public string Nombre { get => nombre; set => nombre = value; }
@@ -31,6 +35,7 @@ namespace almacen
         internal List<Venta> Ventas { get => ventas; set => ventas = value; }
         internal List<Compra> Compras { get => compras; set => compras = value; }
         internal List<Pkits> Kits { get => kits; set => kits = value; }
+        internal List<Pindividual> Pindividuals { get => pindividuals; set => pindividuals = value; }
 
         public static int AlmacenM()
         {
@@ -51,6 +56,7 @@ namespace almacen
         }
         static void Main(string[] args)
         {
+            List<Pindividual> pindividuals = new List<Pindividual>();
             List<Pkits> kits = new List<Pkits>();
             List<Producto> productos = new List<Producto>();
             int valor = -1;
@@ -69,8 +75,12 @@ namespace almacen
                         int pcodigo = int.Parse(Console.ReadLine());
                         Console.WriteLine("ingresar precio del producto");
                         int pprecio = int.Parse(Console.ReadLine());
-                        Console.WriteLine("elegir entre nacional e importada");
-                        bool pimportado = bool.Parse(Console.ReadLine());
+                        Console.WriteLine("elegir entre nacional(1) e importada(2)");
+                        bool pimportado = false;
+                        if ((auxiliar = int.Parse(Console.ReadLine())) == 1 ){
+                            pimportado = true;
+                        }
+                        
 
                         Producto producto = new Producto(pnombre, pcodigo, pprecio, pimportado);
                         productos.Add(producto);
@@ -84,8 +94,20 @@ namespace almacen
                         int kcodigo = int.Parse(Console.ReadLine());
                         Console.WriteLine("ingresar precio del kit");
                         int kprecio = int.Parse(Console.ReadLine());
+                        Console.WriteLine(" ingresar nombre del Producto : ");
+                        pnombre = Console.ReadLine();
+                        Console.WriteLine("ingresar codigo del producto");
+                        pcodigo = int.Parse(Console.ReadLine());
+                        Console.WriteLine("ingresar precio del producto");
+                        pprecio = int.Parse(Console.ReadLine());
+                       Console.WriteLine("elegir entre nacional(1) e importada(2)");
+                        pimportado = false;
+                        if ((auxiliar = int.Parse(Console.ReadLine())) == 1)
+                        {
+                            pimportado = true;
+                        }
 
-                        Pkits kit = new Pkits(knombre, kcodigo, kprecio);
+                        Pkits kit = new Pkits(knombre, kcodigo, kprecio, pnombre, pcodigo, pprecio, pimportado);
                         kits.Add(kit);
                         break;
 
@@ -98,7 +120,7 @@ namespace almacen
                             Console.WriteLine("Nombre del producto: " + result.Pnombre);
                             Console.WriteLine("Codigo del producto: " + result.Pcodigo);
                             Console.WriteLine("Precio del producto" + result.Pprecio);
-                            Console.WriteLine("Importado? si.. Nacional? No: " + result.Pimportado);
+                            Console.WriteLine("Nacional(True) o Importado(False): " + result.Pimportado);
                             Console.WriteLine("=============================================");
 
                         }
@@ -119,19 +141,58 @@ namespace almacen
                         break;
 
                     case 5:
+
+                        Console.WriteLine("nombre del Producto a borrar: ");
+                        string nombrep2 = Console.ReadLine();
+                        for (int cantidad = 0; cantidad < productos.Count; cantidad++)
+                        {
+                            if (nombrep2 == productos[cantidad].Pnombre)
+                            {
+                                Pindividual pindividuals2 = new Pindividual(productos[cantidad].Pnombre, productos[cantidad].Pcodigo, productos[cantidad].Pprecio, productos[cantidad].Pimportado);
+
+                                pindividuals.Add(pindividuals2);
+                                productos.RemoveAt(cantidad);
+
+                            }
+                        }
+                        break;
+
+
                         break;
 
                     case 6:
+
+
+
                         break;
 
                     case 7:
+
+                        Console.WriteLine("nombre del Producto a borrar: ");
+                        string nombrep1 = Console.ReadLine();
+                        for (int cantidad = 0; cantidad < pindividuals.Count; cantidad++)
+                        {
+                            if (nombrep1 == pindividuals[cantidad].Pnombre)
+                            {
+                                Producto productos2 = new Producto(pindividuals[cantidad].Pnombre, pindividuals[cantidad].Pcodigo, pindividuals[cantidad].Pprecio, pindividuals[cantidad].Pimportado);
+
+                                productos.Add(productos2);
+                                pindividuals.RemoveAt(cantidad);
+
+                            }
+                        }
+                        break;
+
                         break;
 
                     case 8:
+
+
+
                         break;
 
                     case 9:
-                        foreach (Producto result in productos)
+                        foreach (Producto result in pindividuals)
                         {
                             Console.WriteLine("===========================================");
                             Console.WriteLine("informacion del producto:");
@@ -158,8 +219,10 @@ namespace almacen
                         break;
 
                     case 11:
-                        break;
 
+
+
+                        break;
 
                 }
 

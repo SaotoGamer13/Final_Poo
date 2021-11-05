@@ -8,7 +8,8 @@ namespace almacen
 {
     class Pindividual : Producto
     {
-
-
+        public Pindividual(string pnombre, int pcodigo, int pprecio, bool pimportado) : base(pnombre, pcodigo, pprecio, pimportado)
+        {
+        }
     }
 }

@@ -25,5 +25,10 @@ namespace almacen
         public int Pcodigo { get => pcodigo; set => pcodigo = value; }
         public int Pprecio { get => pprecio; set => pprecio = value; }
         public bool Pimportado { get => pimportado; set => pimportado = value; }
+   
+       
+
+   
     }
+
 }
