@@ -215,7 +215,7 @@ namespace almacen
                             {
                                 if (nombrep0 == kits[cantidad].Pnombre)
                                 {
-                                    Pkind kits0 = new Pkind(pkinds[cantidad].Knombre, pkinds[cantidad].Kcodigo, pkinds[cantidad].Kprecio, pkinds[cantidad].Pnombre, pkinds[cantidad].Pcodigo, pkinds[cantidad].Pprecio, pkinds[cantidad].Pimportado);
+                                    Pkind kits0 = new Pkind(pkinds[cantidad].Knombre, pkinds[cantidad].Kcodigo, pkinds[cantidad].Kprecio, pkinds[cantidad].Cantidad0, pkinds[cantidad].Pnombre, pkinds[cantidad].Pcodigo, pkinds[cantidad].Pprecio, pkinds[cantidad].Pimportado);
 
                                     pkinds.Add(kits0);
                                     kits.RemoveAt(cantidad);
@@ -271,7 +271,7 @@ namespace almacen
                             {
                                 if (nombrep01 == pkinds[cantidad].Pnombre)
                                 {
-                                    Pkits kits01 = new Pkits(kits[cantidad].Knombre, kits[cantidad].Kcodigo, kits[cantidad].Kprecio, kits[cantidad] Cantidad0, kits[cantidad].Pnombre, kits[cantidad].Pcodigo, kits[cantidad].Pprecio, kits[cantidad].Pimportado);
+                                    Pkits kits01 = new Pkits(kits[cantidad].Knombre, kits[cantidad].Kcodigo, kits[cantidad].Kprecio, kits[cantidad].Cantidad0, kits[cantidad].Pnombre, kits[cantidad].Pcodigo, kits[cantidad].Pprecio, kits[cantidad].Pimportado);
 
                                     kits.Add(kits01);
                                     pkinds.RemoveAt(cantidad);
