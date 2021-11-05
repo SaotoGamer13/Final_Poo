@@ -44,20 +44,22 @@ namespace almacen
         {
             Console.WriteLine("===========================================");
             Console.WriteLine("Bienvenido al almacen deportivo");
-            Console.WriteLine("");
-            Console.WriteLine("1. Agregar producto");
-            Console.WriteLine("2. agregar kit");
-            Console.WriteLine("3. lista de producto disponibles en bodega");
-            Console.WriteLine("4. list de kits disponibles en bodega");
-            Console.WriteLine("5. comprar producto");
-            Console.WriteLine("6. Comprar kit");
-            Console.WriteLine("7. vender producto");
-            Console.WriteLine("8. vender kit");
-            Console.WriteLine("9. lista de productos del cliente");
-            Console.WriteLine("10. lista de kits del cliente");
-            Console.WriteLine("11. generar reporte");
+            Console.WriteLine("===========================================");
             Console.WriteLine("");
             Console.WriteLine("===========================================");
+            Console.WriteLine(" 1. Agregar producto");
+            Console.WriteLine(" 2. agregar kit");
+            Console.WriteLine(" 3. lista de producto disponibles en bodega");
+            Console.WriteLine(" 4. list de kits disponibles en bodega");
+            Console.WriteLine(" 5. comprar producto");
+            Console.WriteLine(" 6. Comprar kit");
+            Console.WriteLine(" 7. vender producto");
+            Console.WriteLine(" 8. vender kit");
+            Console.WriteLine(" 9. lista de productos del cliente");
+            Console.WriteLine(" 10. lista de kits del cliente");
+            Console.WriteLine(" 11. generar reporte");
+            Console.WriteLine("===========================================");
+                        Console.WriteLine("");
 
             return Int32.Parse(Console.ReadLine());
 
@@ -123,23 +125,29 @@ namespace almacen
                     case 3:
                         if (productos.Any())
                         {
-                            foreach (Producto result in productos)
-                            {
-                                Console.WriteLine("===========================================");
-                                Console.WriteLine("informacion del producto:");
-                                Console.WriteLine("Nombre del producto: " + result.Pnombre);
-                                Console.WriteLine("Codigo del producto: " + result.Pcodigo);
-                                Console.WriteLine("Precio del producto" + result.Pprecio);
-                                Console.WriteLine("Nacional(True) o Importado(False): " + result.Pimportado);
-                                Console.WriteLine("=============================================");
+                           
+   
+                                foreach (Producto result in productos)
+                                {
+                                    Console.WriteLine("===========================");
+                                    Console.WriteLine("INFORMACION DEL PRODUCTO:");
+                                    Console.WriteLine("===========================");
+                                    Console.WriteLine("");
+                                    Console.WriteLine("Nombre del producto: " + result.Pnombre);
+                                    Console.WriteLine("");
+                                    Console.WriteLine("  Codigo del producto: " + result.Pcodigo);
+                                    Console.WriteLine("  Precio del producto: " + result.Pprecio);
+                                    Console.WriteLine("  Nacional(True) o Importado(False): " + result.Pimportado);
+                                    Console.WriteLine("=============================================================");
 
-                            }
+
+                                }
                         }
                         else
                         {
-                            Console.WriteLine("=================================");
+                            Console.WriteLine("=============================");
                             Console.WriteLine("La bodega no posee productos");
-                            Console.WriteLine("================================");
+                            Console.WriteLine("=============================");
                         }
                         break;
 
@@ -148,20 +156,23 @@ namespace almacen
                         {
                             foreach (Pkits result in kits)
                             {
-                                Console.WriteLine("===========================================");
-                                Console.WriteLine("informacion del Kit:");
+                                Console.WriteLine("======================");
+                                Console.WriteLine("INFORMACION DEL KIT:");
+                                Console.WriteLine("======================");
+                                Console.WriteLine("");
                                 Console.WriteLine("Nombre del Kit: " + result.Knombre);
-                                Console.WriteLine("Codigo del Kit: " + result.Kcodigo);
-                                Console.WriteLine("Precio del Kit: " + result.Kprecio);
-                                Console.WriteLine("=============================================");
+                                Console.WriteLine("");
+                                Console.WriteLine("  Codigo del Kit: " + result.Kcodigo);
+                                Console.WriteLine("  Precio del Kit: " + result.Kprecio);
+                                Console.WriteLine("===================================");
 
                             }
                         }
                         else
                         {
-                            Console.WriteLine("=================================");
+                            Console.WriteLine("=========================");
                             Console.WriteLine("La bodega no posee kits");
-                            Console.WriteLine("================================");
+                            Console.WriteLine("=========================");
                         }
                         break;
 
@@ -169,6 +180,7 @@ namespace almacen
                         if (productos.Any())
                         {
                             Console.WriteLine("nombre del Producto a comprar: ");
+                            Console.WriteLine("=================================");
                             string nombrep2 = Console.ReadLine();
                             for (int cantidad = 0; cantidad < productos.Count; cantidad++)
                             {
@@ -186,7 +198,7 @@ namespace almacen
                         {
                             Console.WriteLine("===========================================");
                             Console.WriteLine("No hay productos disponibles para comprar");
-                            Console.WriteLine("============================================");
+                            Console.WriteLine("===========================================");
                         }
                         break;
 
@@ -194,6 +206,7 @@ namespace almacen
                         if (kits.Any())
                         {
                             Console.WriteLine("nombre del Kit a comprar: ");
+                            Console.WriteLine("============================");
                             string nombrep0 = Console.ReadLine();
                             for (int cantidad = 0; cantidad < kits.Count; cantidad++)
                             {
@@ -209,18 +222,19 @@ namespace almacen
                         }
                         else
                         {
-                            Console.WriteLine("===========================================");
+                            Console.WriteLine("======================================");
                             Console.WriteLine("No hay kits disponibles para comprar");
-                            Console.WriteLine("============================================");
+                            Console.WriteLine("======================================");
                         }
                         break;
 
 
 
                     case 7:
-                        if (productos.Any())
+                        if (pindividuals.Any())
                         {
                             Console.WriteLine("nombre del Producto a vender: ");
+                            Console.WriteLine("================================");
                             string nombrep1 = Console.ReadLine();
                             for (int cantidad = 0; cantidad < pindividuals.Count; cantidad++)
                             {
@@ -236,18 +250,19 @@ namespace almacen
                         }
                         else
                         {
-                            Console.WriteLine("===========================================");
+                            Console.WriteLine("==========================================");
                             Console.WriteLine("No hay productos disponibles para vender");
-                            Console.WriteLine("============================================");
+                            Console.WriteLine("==========================================");
                         }
                         break;
 
 
 
                     case 8:
-                        if (kits.Any())
+                        if (pkinds.Any())
                         {
                             Console.WriteLine("nombre del Kit a vender: ");
+                            Console.WriteLine("===========================");
                             string nombrep01 = Console.ReadLine();
                             for (int cantidad = 0; cantidad < pkinds.Count; cantidad++)
                             {
@@ -263,45 +278,51 @@ namespace almacen
                         }
                         else
                         {
-                            Console.WriteLine("===========================================");
+                            Console.WriteLine("====================================");
                             Console.WriteLine("No hay kits disponibles para vender");
-                            Console.WriteLine("============================================");
+                            Console.WriteLine("====================================");
                         }
                         break;
 
                     case 9:
-                        if (productos.Any())
+                        if (pindividuals.Any())
                         {
                             foreach (Producto result in pindividuals)
                             {
-                                Console.WriteLine("===========================================");
-                                Console.WriteLine("informacion del producto:");
+                                Console.WriteLine("===========================");
+                                Console.WriteLine("INFORMACION DEL PRODUCTO:");
+                                Console.WriteLine("===========================");
+                                Console.WriteLine("");
                                 Console.WriteLine("Nombre del producto: " + result.Pnombre);
-                                Console.WriteLine("Codigo del producto: " + result.Pcodigo);
-                                Console.WriteLine("Precio del producto" + result.Pprecio);
-                                Console.WriteLine("Importado? si.. Nacional? No: " + result.Pimportado);
-                                Console.WriteLine("=============================================");
+                                Console.WriteLine("");
+                                Console.WriteLine("  Codigo del producto: " + result.Pcodigo);
+                                Console.WriteLine("  Precio del producto" + result.Pprecio);
+                                Console.WriteLine("  Importado? si.. Nacional? No: " + result.Pimportado);
+                                Console.WriteLine("=====================================================");
 
                             }
                         }
                         else
                         {
-                            Console.WriteLine("===========================================");
+                            Console.WriteLine("================================");
                             Console.WriteLine("El cliente no posee productos");
-                            Console.WriteLine("============================================");
+                            Console.WriteLine("================================");
                         }
                         break;
 
                     case 10:
-                        if (kits.Any())
+                        if (pkinds.Any())
                         {
                             foreach (Pkits result in pkinds)
                             {
-                                Console.WriteLine("===========================================");
-                                Console.WriteLine("informacion del Kit:");
+                                Console.WriteLine("=====================");
+                                Console.WriteLine("INFORMACION DEL KIT:");
+                                Console.WriteLine("=====================");
+                                Console.WriteLine("");
                                 Console.WriteLine("Nombre del Kit: " + result.Knombre);
-                                Console.WriteLine("Codigo del Kit: " + result.Kcodigo);
-                                Console.WriteLine("Precio del Kit: " + result.Kprecio);
+                                Console.WriteLine("");
+                                Console.WriteLine("  Codigo del Kit: " + result.Kcodigo);
+                                Console.WriteLine("  Precio del Kit: " + result.Kprecio);
                                 Console.WriteLine("=============================================");
 
                             }
