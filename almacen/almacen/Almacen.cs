@@ -16,6 +16,7 @@ namespace almacen
         private List<Compra> compras = new List<Compra>();
         private List<Pindividual> pindividuals = new List<Pindividual>();
         private List<Pkind> pkinds = new List<Pkind>();
+        private static int billetera = 1000;
 
         private static int auxiliar;
 
@@ -42,21 +43,21 @@ namespace almacen
 
         public static int AlmacenM()
         {
-            //int billetera=1000;
+            
             Console.WriteLine("===========================================");
             Console.WriteLine("Bienvenido al almacen deportivo");
             Console.WriteLine("");
-            Console.WriteLine("1. Agregar producto");
-            Console.WriteLine("2. agregar kit");
-            Console.WriteLine("3. lista de producto disponibles en bodega");
-            Console.WriteLine("4. list de kits disponibles en bodega");
-            Console.WriteLine("5. comprar producto");
+            Console.WriteLine("1. Agregar producto" );
+            Console.WriteLine("2. Agregar kit" );
+            Console.WriteLine("3. Lista de producto disponibles en bodega");
+            Console.WriteLine("4. List de kits disponibles en bodega");
+            Console.WriteLine("5. Comprar producto");
             Console.WriteLine("6. Comprar kit");
-            Console.WriteLine("7. vender producto");
-            Console.WriteLine("8. vender kit");
-            Console.WriteLine("9. lista de productos del cliente");
-            Console.WriteLine("10. lista de kits del cliente");
-            Console.WriteLine("11. generar reporte");
+            Console.WriteLine("7. Vender producto");
+            Console.WriteLine("8. Vender kit");
+            Console.WriteLine("9. Lista de productos del cliente");
+            Console.WriteLine("10. Lista de kits del cliente");
+            Console.WriteLine("11. Generar reporte");
             Console.WriteLine("");
             Console.WriteLine("===========================================");
 
@@ -79,13 +80,13 @@ namespace almacen
                 switch (valor)
                 {
                     case 1:
-                        Console.WriteLine(" ingresar nombre del Producto : ");
+                        Console.WriteLine(" Ingresar nombre del Producto : ");
                         string pnombre = Console.ReadLine();
-                        Console.WriteLine("ingresar codigo del producto");
+                        Console.WriteLine(" Ingresar codigo del producto ");
                         int pcodigo = int.Parse(Console.ReadLine());
-                        Console.WriteLine("ingresar precio del producto");
+                        Console.WriteLine(" Ingresar precio del producto ");
                         int pprecio = int.Parse(Console.ReadLine());
-                        Console.WriteLine("elegir entre nacional(1) e importada(2)");
+                        Console.WriteLine(" Elegir entre nacional (1) e importada (2)");
                         bool pimportado = false;
                         if ((auxiliar = int.Parse(Console.ReadLine())) == 1 ){
                             pimportado = true;
@@ -95,7 +96,7 @@ namespace almacen
                         Producto producto = new Producto(pnombre, pcodigo, pprecio, pimportado);
                         productos.Add(producto);
      
-                        //billetera = billetera-pprecio;
+                        billetera = billetera-pprecio;
                         break;
 
                     case 2:
@@ -120,7 +121,7 @@ namespace almacen
 
                         Pkits kit = new Pkits(knombre, kcodigo, kprecio, pnombre, pcodigo, pprecio, pimportado);
                         kits.Add(kit);
-                        //billetera = billetera - pprecio;
+                        billetera = billetera - pprecio;
                         break;
 
                     case 3:
@@ -234,7 +235,7 @@ namespace almacen
                                     productos.Add(productos2);
                                     pindividuals.RemoveAt(cantidad);
                                     
-                                    //Console.writrLine("Saldo Disponible: " + billetera);
+                                    Console.WriteLine("Saldo Disponible: " + billetera);
 
                                 }
                             }
@@ -263,7 +264,7 @@ namespace almacen
                                     kits.Add(kits01);
                                     pkinds.RemoveAt(cantidad);
                                     
-                                    //Console.writrLine("Saldo Disponible: " + billetera);
+                                    Console.WriteLine("Saldo Disponible: " + billetera);
 
                                 }
                             }

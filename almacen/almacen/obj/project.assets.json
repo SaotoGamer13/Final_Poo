@@ -8,26 +8,27 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\juan\\.nuget\\packages\\": {}
+    "C:\\Users\\norem\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\juan\\Documents\\GitHub\\Final_Poo\\almacen\\almacen\\almacen.csproj",
+      "projectUniqueName": "D:\\Usuarios\\Documentos\\SEMESTRE 2 2021\\POO\\Final_Poo\\almacen\\almacen\\almacen.csproj",
       "projectName": "almacen",
-      "projectPath": "C:\\Users\\juan\\Documents\\GitHub\\Final_Poo\\almacen\\almacen\\almacen.csproj",
-      "packagesPath": "C:\\Users\\juan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\juan\\Documents\\GitHub\\Final_Poo\\almacen\\almacen\\obj\\",
+      "projectPath": "D:\\Usuarios\\Documentos\\SEMESTRE 2 2021\\POO\\Final_Poo\\almacen\\almacen\\almacen.csproj",
+      "packagesPath": "C:\\Users\\norem\\.nuget\\packages\\",
+      "outputPath": "D:\\Usuarios\\Documentos\\SEMESTRE 2 2021\\POO\\Final_Poo\\almacen\\almacen\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\juan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\norem\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
@@ -59,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
