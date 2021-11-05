@@ -12,7 +12,7 @@ namespace almacen
         private int identificacion;
         private string direccion;
         private int telefono;
-        private List<Cliente> Clientes = new List<Cliente();
+        private List<Cliente> Clientes = new List<Cliente>();
 
         public Tercero(string tnombre, int identificacion, string direccion, int telefono, List<Cliente> clientes)
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace almacen
 {
-    public class Almacen
+    class Almacen
     {
         private string nombre;
         private int id;
@@ -15,7 +15,7 @@ namespace almacen
         private List<Venta> ventas = new List<Venta>();
         private List<Compra> compras = new List<Compra>();
 
-        public Almacen(string nombre, int id, List<Producto> productos, List<Venta> ventas, List<Compra> compras, List<Pkits> kits)
+        public Almacen(string nombre, int id,List<Producto> productos, List<Venta> ventas, List<Compra> compras, List<Pkits> kits)
         {
             this.nombre = nombre ?? throw new ArgumentNullException(nameof(nombre));
             this.id = id;
@@ -108,9 +108,9 @@ namespace almacen
                         {
                             Console.WriteLine("===========================================");
                             Console.WriteLine("informacion del Kit:");
-                            Console.WriteLine("Nombre del Kit: " + result.Knombre1);
-                            Console.WriteLine("Codigo del Kit: " + result.Kcodigo1);
-                            Console.WriteLine("Precio del Kit: " + result.Kprecio1);
+                            Console.WriteLine("Nombre del Kit: " + result.Knombre);
+                            Console.WriteLine("Codigo del Kit: " + result.Kcodigo);
+                            Console.WriteLine("Precio del Kit: " + result.Kprecio);
                             Console.WriteLine("=============================================");
 
                         }
@@ -149,9 +149,9 @@ namespace almacen
                         {
                             Console.WriteLine("===========================================");
                             Console.WriteLine("informacion del Kit:");
-                            Console.WriteLine("Nombre del Kit: " + result.Knombre1);
-                            Console.WriteLine("Codigo del Kit: " + result.Kcodigo1);
-                            Console.WriteLine("Precio del Kit: " + result.Kprecio1);
+                            Console.WriteLine("Nombre del Kit: " + result.Knombre);
+                            Console.WriteLine("Codigo del Kit: " + result.Kcodigo);
+                            Console.WriteLine("Precio del Kit: " + result.Kprecio);
                             Console.WriteLine("=============================================");
 
                         }

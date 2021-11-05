@@ -9,19 +9,19 @@ namespace almacen
     class Pkits : Producto
     {
 
-        private string Knombre;
-        private int Kcodigo;
-        private int Kprecio;
+        private string knombre;
+        private int kcodigo;
+        private int kprecio;
 
         public Pkits(string knombre, int kcodigo, int kprecio)
         {
-            Knombre = knombre ?? throw new ArgumentNullException(nameof(knombre));
-            Kcodigo = kcodigo;
-            Kprecio = kprecio;
+            this.knombre = knombre;
+            this.kcodigo = kcodigo;
+            this.kprecio = kprecio;
         }
 
-        public string Knombre1 { get => Knombre; set => Knombre = value; }
-        public int Kcodigo1 { get => Kcodigo; set => Kcodigo = value; }
-        public int Kprecio1 { get => Kprecio; set => Kprecio = value; }
+        public string Knombre { get => knombre; set => knombre = value; }
+        public int Kcodigo { get => kcodigo; set => kcodigo = value; }
+        public int Kprecio { get => kprecio; set => kprecio = value; }
     }
 }
