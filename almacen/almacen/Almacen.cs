@@ -15,10 +15,11 @@ namespace almacen
         private List<Venta> ventas = new List<Venta>();
         private List<Compra> compras = new List<Compra>();
         private List<Pindividual> pindividuals = new List<Pindividual>();
+        private List<Pkind> pkinds = new List<Pkind>();
 
         private static int auxiliar;
 
-        public Almacen(string nombre, int id,List<Producto> productos, List<Venta> ventas, List<Compra> compras, List<Pkits> kits, List<Pindividual> pindividuals)
+        public Almacen(string nombre, int id,List<Producto> productos, List<Venta> ventas, List<Compra> compras, List<Pkits> kits, List<Pindividual> pindividuals, List<Pkind> pkinds)
         {
             this.nombre = nombre ?? throw new ArgumentNullException(nameof(nombre));
             this.id = id;
@@ -27,6 +28,7 @@ namespace almacen
             this.compras = compras ?? throw new ArgumentNullException(nameof(compras));
             this.kits = kits ?? throw new ArgumentNullException(nameof(kits));
             this.pindividuals = pindividuals ?? throw new ArgumentNullException(nameof(pindividuals));
+            this.pkinds = pkinds ?? throw new ArgumentNullException(nameof(pkinds));
         }
 
         public string Nombre { get => nombre; set => nombre = value; }
@@ -36,6 +38,7 @@ namespace almacen
         internal List<Compra> Compras { get => compras; set => compras = value; }
         internal List<Pkits> Kits { get => kits; set => kits = value; }
         internal List<Pindividual> Pindividuals { get => pindividuals; set => pindividuals = value; }
+        internal List<Pkind> Pkinds { get => pkinds; set => pkinds = value; }
 
         public static int AlmacenM()
         {
@@ -56,6 +59,7 @@ namespace almacen
         }
         static void Main(string[] args)
         {
+            List<Pkind> pkinds = new List<Pkind>();
             List<Pindividual> pindividuals = new List<Pindividual>();
             List<Pkits> kits = new List<Pkits>();
             List<Producto> productos = new List<Producto>();
@@ -112,109 +116,196 @@ namespace almacen
                         break;
 
                     case 3:
-
-                        foreach (Producto result in productos)
+                        if (productos.Any())
                         {
-                            Console.WriteLine("===========================================");
-                            Console.WriteLine("informacion del producto:");
-                            Console.WriteLine("Nombre del producto: " + result.Pnombre);
-                            Console.WriteLine("Codigo del producto: " + result.Pcodigo);
-                            Console.WriteLine("Precio del producto" + result.Pprecio);
-                            Console.WriteLine("Nacional(True) o Importado(False): " + result.Pimportado);
-                            Console.WriteLine("=============================================");
+                            foreach (Producto result in productos)
+                            {
+                                Console.WriteLine("===========================================");
+                                Console.WriteLine("informacion del producto:");
+                                Console.WriteLine("Nombre del producto: " + result.Pnombre);
+                                Console.WriteLine("Codigo del producto: " + result.Pcodigo);
+                                Console.WriteLine("Precio del producto" + result.Pprecio);
+                                Console.WriteLine("Nacional(True) o Importado(False): " + result.Pimportado);
+                                Console.WriteLine("=============================================");
 
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("=================================");
+                            Console.WriteLine("La bodega no posee productos");
+                            Console.WriteLine("================================");
                         }
                         break;
+
                     case 4:
-                        foreach (Pkits result in kits)
+                        if (kits.Any())
                         {
-                            Console.WriteLine("===========================================");
-                            Console.WriteLine("informacion del Kit:");
-                            Console.WriteLine("Nombre del Kit: " + result.Knombre);
-                            Console.WriteLine("Codigo del Kit: " + result.Kcodigo);
-                            Console.WriteLine("Precio del Kit: " + result.Kprecio);
-                            Console.WriteLine("=============================================");
+                            foreach (Pkits result in kits)
+                            {
+                                Console.WriteLine("===========================================");
+                                Console.WriteLine("informacion del Kit:");
+                                Console.WriteLine("Nombre del Kit: " + result.Knombre);
+                                Console.WriteLine("Codigo del Kit: " + result.Kcodigo);
+                                Console.WriteLine("Precio del Kit: " + result.Kprecio);
+                                Console.WriteLine("=============================================");
 
+                            }
                         }
-
-
+                        else
+                        {
+                            Console.WriteLine("=================================");
+                            Console.WriteLine("La bodega no posee kits");
+                            Console.WriteLine("================================");
+                        }
                         break;
 
                     case 5:
-
-                        Console.WriteLine("nombre del Producto a borrar: ");
-                        string nombrep2 = Console.ReadLine();
-                        for (int cantidad = 0; cantidad < productos.Count; cantidad++)
+                        if (productos.Any())
                         {
-                            if (nombrep2 == productos[cantidad].Pnombre)
+                            Console.WriteLine("nombre del Producto a comprar: ");
+                            string nombrep2 = Console.ReadLine();
+                            for (int cantidad = 0; cantidad < productos.Count; cantidad++)
                             {
-                                Pindividual pindividuals2 = new Pindividual(productos[cantidad].Pnombre, productos[cantidad].Pcodigo, productos[cantidad].Pprecio, productos[cantidad].Pimportado);
+                                if (nombrep2 == productos[cantidad].Pnombre)
+                                {
+                                    Pindividual pindividuals2 = new Pindividual(productos[cantidad].Pnombre, productos[cantidad].Pcodigo, productos[cantidad].Pprecio, productos[cantidad].Pimportado);
 
-                                pindividuals.Add(pindividuals2);
-                                productos.RemoveAt(cantidad);
+                                    pindividuals.Add(pindividuals2);
+                                    productos.RemoveAt(cantidad);
 
+                                }
                             }
                         }
-                        break;
-
-
+                        else
+                        {
+                            Console.WriteLine("===========================================");
+                            Console.WriteLine("No hay productos disponibles para comprar");
+                            Console.WriteLine("============================================");
+                        }
                         break;
 
                     case 6:
-
-
-
-                        break;
-
-                    case 7:
-
-                        Console.WriteLine("nombre del Producto a borrar: ");
-                        string nombrep1 = Console.ReadLine();
-                        for (int cantidad = 0; cantidad < pindividuals.Count; cantidad++)
+                        if (kits.Any())
                         {
-                            if (nombrep1 == pindividuals[cantidad].Pnombre)
+                            Console.WriteLine("nombre del Kit a comprar: ");
+                            string nombrep0 = Console.ReadLine();
+                            for (int cantidad = 0; cantidad < kits.Count; cantidad++)
                             {
-                                Producto productos2 = new Producto(pindividuals[cantidad].Pnombre, pindividuals[cantidad].Pcodigo, pindividuals[cantidad].Pprecio, pindividuals[cantidad].Pimportado);
+                                if (nombrep0 == kits[cantidad].Pnombre)
+                                {
+                                    Pkind kits0 = new Pkind(pkinds[cantidad].Knombre, pkinds[cantidad].Kcodigo, pkinds[cantidad].Kprecio, pkinds[cantidad].Pnombre, pkinds[cantidad].Pcodigo, pkinds[cantidad].Pprecio, pkinds[cantidad].Pimportado);
 
-                                productos.Add(productos2);
-                                pindividuals.RemoveAt(cantidad);
+                                    pkinds.Add(kits0);
+                                    kits.RemoveAt(cantidad);
 
+                                }
                             }
+                        }
+                        else
+                        {
+                            Console.WriteLine("===========================================");
+                            Console.WriteLine("No hay kits disponibles para comprar");
+                            Console.WriteLine("============================================");
                         }
                         break;
 
+
+
+                    case 7:
+                        if (productos.Any())
+                        {
+                            Console.WriteLine("nombre del Producto a vender: ");
+                            string nombrep1 = Console.ReadLine();
+                            for (int cantidad = 0; cantidad < pindividuals.Count; cantidad++)
+                            {
+                                if (nombrep1 == pindividuals[cantidad].Pnombre)
+                                {
+                                    Producto productos2 = new Producto(pindividuals[cantidad].Pnombre, pindividuals[cantidad].Pcodigo, pindividuals[cantidad].Pprecio, pindividuals[cantidad].Pimportado);
+
+                                    productos.Add(productos2);
+                                    pindividuals.RemoveAt(cantidad);
+
+                                }
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("===========================================");
+                            Console.WriteLine("No hay productos disponibles para vender");
+                            Console.WriteLine("============================================");
+                        }
                         break;
 
+
+
                     case 8:
+                        if (kits.Any())
+                        {
+                            Console.WriteLine("nombre del Kit a vender: ");
+                            string nombrep01 = Console.ReadLine();
+                            for (int cantidad = 0; cantidad < pkinds.Count; cantidad++)
+                            {
+                                if (nombrep01 == pkinds[cantidad].Pnombre)
+                                {
+                                    Pkits kits01 = new Pkits(kits[cantidad].Knombre, kits[cantidad].Kcodigo, kits[cantidad].Kprecio, kits[cantidad].Pnombre, kits[cantidad].Pcodigo, kits[cantidad].Pprecio, kits[cantidad].Pimportado);
 
+                                    kits.Add(kits01);
+                                    pkinds.RemoveAt(cantidad);
 
-
+                                }
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("===========================================");
+                            Console.WriteLine("No hay kits disponibles para vender");
+                            Console.WriteLine("============================================");
+                        }
                         break;
 
                     case 9:
-                        foreach (Producto result in pindividuals)
+                        if (productos.Any())
+                        {
+                            foreach (Producto result in pindividuals)
+                            {
+                                Console.WriteLine("===========================================");
+                                Console.WriteLine("informacion del producto:");
+                                Console.WriteLine("Nombre del producto: " + result.Pnombre);
+                                Console.WriteLine("Codigo del producto: " + result.Pcodigo);
+                                Console.WriteLine("Precio del producto" + result.Pprecio);
+                                Console.WriteLine("Importado? si.. Nacional? No: " + result.Pimportado);
+                                Console.WriteLine("=============================================");
+
+                            }
+                        }
+                        else
                         {
                             Console.WriteLine("===========================================");
-                            Console.WriteLine("informacion del producto:");
-                            Console.WriteLine("Nombre del producto: " + result.Pnombre);
-                            Console.WriteLine("Codigo del producto: " + result.Pcodigo);
-                            Console.WriteLine("Precio del producto" + result.Pprecio);
-                            Console.WriteLine("Importado? si.. Nacional? No: " + result.Pimportado);
-                            Console.WriteLine("=============================================");
-
+                            Console.WriteLine("El cliente no posee productos");
+                            Console.WriteLine("============================================");
                         }
                         break;
 
                     case 10:
-                        foreach (Pkits result in kits)
+                        if (kits.Any())
+                        {
+                            foreach (Pkits result in pkinds)
+                            {
+                                Console.WriteLine("===========================================");
+                                Console.WriteLine("informacion del Kit:");
+                                Console.WriteLine("Nombre del Kit: " + result.Knombre);
+                                Console.WriteLine("Codigo del Kit: " + result.Kcodigo);
+                                Console.WriteLine("Precio del Kit: " + result.Kprecio);
+                                Console.WriteLine("=============================================");
+
+                            }
+                        }
+                        else
                         {
                             Console.WriteLine("===========================================");
-                            Console.WriteLine("informacion del Kit:");
-                            Console.WriteLine("Nombre del Kit: " + result.Knombre);
-                            Console.WriteLine("Codigo del Kit: " + result.Kcodigo);
-                            Console.WriteLine("Precio del Kit: " + result.Kprecio);
-                            Console.WriteLine("=============================================");
-
+                            Console.WriteLine("El cliente no posee kits");
+                            Console.WriteLine("============================================");
                         }
                         break;
 
@@ -222,7 +313,7 @@ namespace almacen
 
 
 
-                        break;
+                       break;
 
                 }
 
