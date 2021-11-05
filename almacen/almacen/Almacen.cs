@@ -44,7 +44,11 @@ namespace almacen
 
         public static int AlmacenM()
         {
+<<<<<<< HEAD
             Console.WriteLine("El cliente posee {0} cantidad de dinero" + Almacen.Dinero);
+=======
+            //int billetera=1000;
+>>>>>>> 015f11b1beeba282d7085f5de2b93d3c23ad724c
             Console.WriteLine("===========================================");
             Console.WriteLine("Bienvenido al almacen deportivo");
             Console.WriteLine("===========================================");
@@ -98,7 +102,8 @@ namespace almacen
 
                         Producto producto = new Producto(pnombre, pcodigo, pprecio, pimportado);
                         productos.Add(producto);
-
+     
+                        //billetera = billetera-pprecio;
                         break;
 
                     case 2:
@@ -125,6 +130,7 @@ namespace almacen
 
                         Pkits kit = new Pkits(knombre, kcodigo, kprecio, cantidad0, pnombre, pcodigo, pprecio, pimportado);
                         kits.Add(kit);
+                        //billetera = billetera - pprecio;
                         break;
 
                     case 3:
@@ -252,6 +258,8 @@ namespace almacen
 
                                     productos.Add(productos2);
                                     pindividuals.RemoveAt(cantidad);
+                                    
+                                    //Console.writrLine("Saldo Disponible: " + billetera);
 
                                 }
                             }
@@ -280,6 +288,8 @@ namespace almacen
 
                                     kits.Add(kits01);
                                     pkinds.RemoveAt(cantidad);
+                                    
+                                    //Console.writrLine("Saldo Disponible: " + billetera);
 
                                 }
                             }
