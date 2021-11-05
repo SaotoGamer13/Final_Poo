@@ -16,6 +16,7 @@ namespace almacen
         private List<Compra> compras = new List<Compra>();
         private List<Pindividual> pindividuals = new List<Pindividual>();
         private List<Pkind> pkinds = new List<Pkind>();
+        private int dinero;
         private static int billetera = 1000;
 
         private static int auxiliar;
@@ -45,8 +46,7 @@ namespace almacen
 
         public static int AlmacenM()
         {
-            
->>>>>>> 015f11b1beeba282d7085f5de2b93d3c23ad724c
+
             Console.WriteLine("===========================================");
             Console.WriteLine("Bienvenido al almacen deportivo");
             Console.WriteLine("===========================================");
