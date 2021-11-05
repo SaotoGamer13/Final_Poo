@@ -130,7 +130,6 @@ namespace almacen
 
                         Pkits kit = new Pkits(knombre, kcodigo, kprecio, cantidad0, pnombre, pcodigo, pprecio, pimportado);
                         kits.Add(kit);
-                        //billetera = billetera - pprecio;
                         break;
 
                     case 3:
@@ -258,8 +257,6 @@ namespace almacen
 
                                     productos.Add(productos2);
                                     pindividuals.RemoveAt(cantidad);
-                                    
-                                    //Console.writrLine("Saldo Disponible: " + billetera);
 
                                 }
                             }
@@ -288,8 +285,6 @@ namespace almacen
 
                                     kits.Add(kits01);
                                     pkinds.RemoveAt(cantidad);
-                                    
-                                    //Console.writrLine("Saldo Disponible: " + billetera);
 
                                 }
                             }
