@@ -8,7 +8,7 @@ namespace almacen
 {
     class Pkind : Pkits
     {
-        public Pkind(string knombre, int kcodigo, int kprecio, string pnombre, int pcodigo, int pprecio, bool pimportado) : base(knombre, kcodigo, kprecio, pnombre, pcodigo, pprecio, pimportado)
+        public Pkind(string knombre, int kcodigo, int kprecio, int cantidad0 ,string pnombre, int pcodigo, int pprecio, bool pimportado) : base(knombre, kcodigo, kprecio, cantidad0, pnombre, pcodigo, pprecio, pimportado)
         {
         }
     }
