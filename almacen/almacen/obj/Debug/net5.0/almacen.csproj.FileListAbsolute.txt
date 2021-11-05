@@ -3,3 +3,8 @@ C:\Users\juan\source\repos\AlmacenDeportivo\almacenImplementacion\almacen\almace
 C:\Users\juan\source\repos\AlmacenDeportivo\almacenImplementacion\almacen\almacen\obj\Debug\net5.0\almacen.AssemblyInfoInputs.cache
 C:\Users\juan\source\repos\AlmacenDeportivo\almacenImplementacion\almacen\almacen\obj\Debug\net5.0\almacen.AssemblyInfo.cs
 C:\Users\juan\source\repos\AlmacenDeportivo\almacenImplementacion\almacen\almacen\obj\Debug\net5.0\almacen.csproj.CoreCompileInputs.cache
+C:\Users\juan\Documents\GitHub\Final_Poo\almacen\almacen\obj\Debug\net5.0\almacen.csprojAssemblyReference.cache
+C:\Users\juan\Documents\GitHub\Final_Poo\almacen\almacen\obj\Debug\net5.0\almacen.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\juan\Documents\GitHub\Final_Poo\almacen\almacen\obj\Debug\net5.0\almacen.AssemblyInfoInputs.cache
+C:\Users\juan\Documents\GitHub\Final_Poo\almacen\almacen\obj\Debug\net5.0\almacen.AssemblyInfo.cs
+C:\Users\juan\Documents\GitHub\Final_Poo\almacen\almacen\obj\Debug\net5.0\almacen.csproj.CoreCompileInputs.cache
