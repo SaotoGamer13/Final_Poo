@@ -42,6 +42,7 @@ namespace almacen
 
         public static int AlmacenM()
         {
+            //int billetera=1000;
             Console.WriteLine("===========================================");
             Console.WriteLine("Bienvenido al almacen deportivo");
             Console.WriteLine("");
@@ -93,7 +94,8 @@ namespace almacen
 
                         Producto producto = new Producto(pnombre, pcodigo, pprecio, pimportado);
                         productos.Add(producto);
-
+     
+                        //billetera = billetera-pprecio;
                         break;
 
                     case 2:
