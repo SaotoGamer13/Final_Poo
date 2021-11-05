@@ -105,11 +105,13 @@ namespace almacen
                         int kcodigo = int.Parse(Console.ReadLine());
                         Console.WriteLine("ingresar precio del kit");
                         int kprecio = int.Parse(Console.ReadLine());
-                        Console.WriteLine(" ingresar nombre del Producto : ");
+                        Console.WriteLine("ingresar cantidad de productos en el kit");
+                        int cantidad0 = int.Parse(Console.ReadLine());
+                        Console.WriteLine(" ingresar nombre de los Productos : ");
                         pnombre = Console.ReadLine();
-                        Console.WriteLine("ingresar codigo del producto");
+                        Console.WriteLine("ingresar codigo de los productos");
                         pcodigo = int.Parse(Console.ReadLine());
-                        Console.WriteLine("ingresar precio del producto");
+                        Console.WriteLine("ingresar precio de los productos");
                         pprecio = int.Parse(Console.ReadLine());
                        Console.WriteLine("elegir entre nacional(1) e importada(2)");
                         pimportado = false;
@@ -118,17 +120,17 @@ namespace almacen
                             pimportado = true;
                         }
 
-                        Pkits kit = new Pkits(knombre, kcodigo, kprecio, pnombre, pcodigo, pprecio, pimportado);
+                        Pkits kit = new Pkits(knombre, kcodigo, kprecio, cantidad0, pnombre, pcodigo, pprecio, pimportado);
                         kits.Add(kit);
                         break;
 
                     case 3:
                         if (productos.Any())
                         {
-                           
-   
-                                foreach (Producto result in productos)
-                                {
+                            Console.WriteLine("La lista contiene {0} productos", productos.Count);
+
+                            foreach (Producto result in productos)
+                            {
                                     Console.WriteLine("===========================");
                                     Console.WriteLine("INFORMACION DEL PRODUCTO:");
                                     Console.WriteLine("===========================");
@@ -141,7 +143,7 @@ namespace almacen
                                     Console.WriteLine("=============================================================");
 
 
-                                }
+                            }
                         }
                         else
                         {
@@ -154,6 +156,7 @@ namespace almacen
                     case 4:
                         if (kits.Any())
                         {
+                            Console.WriteLine("La lista contiene {0} kits", productos.Count);
                             foreach (Pkits result in kits)
                             {
                                 Console.WriteLine("======================");
@@ -268,7 +271,7 @@ namespace almacen
                             {
                                 if (nombrep01 == pkinds[cantidad].Pnombre)
                                 {
-                                    Pkits kits01 = new Pkits(kits[cantidad].Knombre, kits[cantidad].Kcodigo, kits[cantidad].Kprecio, kits[cantidad].Pnombre, kits[cantidad].Pcodigo, kits[cantidad].Pprecio, kits[cantidad].Pimportado);
+                                    Pkits kits01 = new Pkits(kits[cantidad].Knombre, kits[cantidad].Kcodigo, kits[cantidad].Kprecio, kits[cantidad] Cantidad0, kits[cantidad].Pnombre, kits[cantidad].Pcodigo, kits[cantidad].Pprecio, kits[cantidad].Pimportado);
 
                                     kits.Add(kits01);
                                     pkinds.RemoveAt(cantidad);
@@ -287,6 +290,7 @@ namespace almacen
                     case 9:
                         if (pindividuals.Any())
                         {
+                            Console.WriteLine("El cliente possee {0} productos", pindividuals.Count);
                             foreach (Producto result in pindividuals)
                             {
                                 Console.WriteLine("===========================");
@@ -297,7 +301,7 @@ namespace almacen
                                 Console.WriteLine("");
                                 Console.WriteLine("  Codigo del producto: " + result.Pcodigo);
                                 Console.WriteLine("  Precio del producto" + result.Pprecio);
-                                Console.WriteLine("  Importado? si.. Nacional? No: " + result.Pimportado);
+                                Console.WriteLine("  Nacional(True) o Importado(False): " + result.Pimportado);
                                 Console.WriteLine("=====================================================");
 
                             }
@@ -313,6 +317,7 @@ namespace almacen
                     case 10:
                         if (pkinds.Any())
                         {
+                            Console.WriteLine("El cliente posee {0} kits", pkinds.Count);
                             foreach (Pkits result in pkinds)
                             {
                                 Console.WriteLine("=====================");
@@ -323,6 +328,8 @@ namespace almacen
                                 Console.WriteLine("");
                                 Console.WriteLine("  Codigo del Kit: " + result.Kcodigo);
                                 Console.WriteLine("  Precio del Kit: " + result.Kprecio);
+                                Console.WriteLine("  Nombre del producto: " + result.Pnombre);
+                                Console.WriteLine("  Cantidad del producto: " + result.Cantidad0);
                                 Console.WriteLine("=============================================");
 
                             }
