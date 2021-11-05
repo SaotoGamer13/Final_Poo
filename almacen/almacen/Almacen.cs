@@ -42,6 +42,9 @@ namespace almacen
 
         public static int AlmacenM()
         {
+            Console.WriteLine("===========================================");
+            Console.WriteLine("Bienvenido al almacen deportivo");
+            Console.WriteLine("");
             Console.WriteLine("1. Agregar producto");
             Console.WriteLine("2. agregar kit");
             Console.WriteLine("3. lista de producto disponibles en bodega");
@@ -53,6 +56,8 @@ namespace almacen
             Console.WriteLine("9. lista de productos del cliente");
             Console.WriteLine("10. lista de kits del cliente");
             Console.WriteLine("11. generar reporte");
+            Console.WriteLine("");
+            Console.WriteLine("===========================================");
 
             return Int32.Parse(Console.ReadLine());
 
