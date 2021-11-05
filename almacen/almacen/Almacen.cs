@@ -16,10 +16,10 @@ namespace almacen
         private List<Compra> compras = new List<Compra>();
         private List<Pindividual> pindividuals = new List<Pindividual>();
         private List<Pkind> pkinds = new List<Pkind>();
-
+        private int dinero;
         private static int auxiliar;
-
-        public Almacen(string nombre, int id,List<Producto> productos, List<Venta> ventas, List<Compra> compras, List<Pkits> kits, List<Pindividual> pindividuals, List<Pkind> pkinds)
+        
+        public Almacen(string nombre, int id,List<Producto> productos, List<Venta> ventas, List<Compra> compras, List<Pkits> kits, List<Pindividual> pindividuals, List<Pkind> pkinds, int dinero)
         {
             this.nombre = nombre ?? throw new ArgumentNullException(nameof(nombre));
             this.id = id;
@@ -29,6 +29,7 @@ namespace almacen
             this.kits = kits ?? throw new ArgumentNullException(nameof(kits));
             this.pindividuals = pindividuals ?? throw new ArgumentNullException(nameof(pindividuals));
             this.pkinds = pkinds ?? throw new ArgumentNullException(nameof(pkinds));
+            this.dinero = dinero;
         }
 
         public string Nombre { get => nombre; set => nombre = value; }
@@ -39,9 +40,11 @@ namespace almacen
         internal List<Pkits> Kits { get => kits; set => kits = value; }
         internal List<Pindividual> Pindividuals { get => pindividuals; set => pindividuals = value; }
         internal List<Pkind> Pkinds { get => pkinds; set => pkinds = value; }
+        public int Dinero { get => dinero; set => dinero = 1000; }
 
         public static int AlmacenM()
         {
+            Console.WriteLine("El cliente posee {0} cantidad de dinero" + Almacen.Dinero);
             Console.WriteLine("===========================================");
             Console.WriteLine("Bienvenido al almacen deportivo");
             Console.WriteLine("===========================================");
@@ -103,16 +106,16 @@ namespace almacen
                         string knombre = Console.ReadLine();
                         Console.WriteLine("ingresar codigo del kit");
                         int kcodigo = int.Parse(Console.ReadLine());
-                        Console.WriteLine("ingresar precio del kit");
-                        int kprecio = int.Parse(Console.ReadLine());
                         Console.WriteLine("ingresar cantidad de productos en el kit");
                         int cantidad0 = int.Parse(Console.ReadLine());
                         Console.WriteLine(" ingresar nombre de los Productos : ");
                         pnombre = Console.ReadLine();
+                        Console.WriteLine("ingresar precio del producto individual");
+                        pprecio = int.Parse(Console.ReadLine());
                         Console.WriteLine("ingresar codigo de los productos");
                         pcodigo = int.Parse(Console.ReadLine());
-                        Console.WriteLine("ingresar precio de los productos");
-                        pprecio = int.Parse(Console.ReadLine());
+
+                        int kprecio = pprecio * cantidad0;
                        Console.WriteLine("elegir entre nacional(1) e importada(2)");
                         pimportado = false;
                         if ((auxiliar = int.Parse(Console.ReadLine())) == 1)
@@ -156,7 +159,7 @@ namespace almacen
                     case 4:
                         if (kits.Any())
                         {
-                            Console.WriteLine("La lista contiene {0} kits", productos.Count);
+                            Console.WriteLine("La lista contiene {0} kits", kits.Count);
                             foreach (Pkits result in kits)
                             {
                                 Console.WriteLine("======================");
@@ -167,6 +170,8 @@ namespace almacen
                                 Console.WriteLine("");
                                 Console.WriteLine("  Codigo del Kit: " + result.Kcodigo);
                                 Console.WriteLine("  Precio del Kit: " + result.Kprecio);
+                                Console.WriteLine("  Nombre del producto: " + result.Pnombre);
+                                Console.WriteLine("  Cantidad del producto: " + result.Cantidad0);
                                 Console.WriteLine("===================================");
 
                             }
@@ -213,7 +218,7 @@ namespace almacen
                             string nombrep0 = Console.ReadLine();
                             for (int cantidad = 0; cantidad < kits.Count; cantidad++)
                             {
-                                if (nombrep0 == kits[cantidad].Pnombre)
+                                if (nombrep0 == kits[cantidad].Knombre)
                                 {
                                     Pkind kits0 = new Pkind(pkinds[cantidad].Knombre, pkinds[cantidad].Kcodigo, pkinds[cantidad].Kprecio, pkinds[cantidad].Cantidad0, pkinds[cantidad].Pnombre, pkinds[cantidad].Pcodigo, pkinds[cantidad].Pprecio, pkinds[cantidad].Pimportado);
 
@@ -269,7 +274,7 @@ namespace almacen
                             string nombrep01 = Console.ReadLine();
                             for (int cantidad = 0; cantidad < pkinds.Count; cantidad++)
                             {
-                                if (nombrep01 == pkinds[cantidad].Pnombre)
+                                if (nombrep01 == pkinds[cantidad].Knombre)
                                 {
                                     Pkits kits01 = new Pkits(kits[cantidad].Knombre, kits[cantidad].Kcodigo, kits[cantidad].Kprecio, kits[cantidad].Cantidad0, kits[cantidad].Pnombre, kits[cantidad].Pcodigo, kits[cantidad].Pprecio, kits[cantidad].Pimportado);
 
