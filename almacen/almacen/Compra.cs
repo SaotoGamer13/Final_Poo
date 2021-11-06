@@ -20,4 +20,6 @@ namespace almacen
         public int Cantidad1 { get => Cantidad; set => Cantidad = value; }
         public DateTime Fecha1 { get => Fecha; set => Fecha = value; }
     }
+
+  
 }
