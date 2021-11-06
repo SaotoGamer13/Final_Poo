@@ -48,12 +48,11 @@ namespace almacen
         {
 
             Console.WriteLine("===========================================");
-            Console.WriteLine("
-╔╦═╦══════╦╦╦═╦═══════╗\n
-║║╚╬═╦═╦═╦╣╠╣░╠═╦═╦══╗║\n
-║╠╗║║║║║╠╩╗╔╣╔╣╠╣║╠╗╚╣║\n
-║╚═╣╔╩═╩╝..╚═╩╝╚╝╚═╩══╝║\n
-╚══╩╩═════════════════╝");
+            Console.WriteLine("╔╦═╦══════╦╦╦═╦═══════╗");
+            Console.WriteLine("║║╚╬═╦═╦═╦╣╠╣░╠═╦═╦══╗║");
+            Console.WriteLine("║╠╗║║║║║╠╩╗╔╣╔╣╠╣║╠╗╚╣║");
+            Console.WriteLine("║╚═╣╔╩═╩╝..╚═╩╝╚╝╚═╩══╝║");
+            Console.WriteLine("╚══╩╩═════════════════╝");
             Console.WriteLine("===========================================");
             Console.WriteLine("");
             Console.WriteLine("1. Agregar producto" );
