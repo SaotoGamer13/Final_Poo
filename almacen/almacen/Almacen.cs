@@ -122,6 +122,7 @@ namespace almacen
                             pcodigo = int.Parse(Console.ReadLine());
 
                             int kprecio = pprecio * cantidad0;
+
                             Console.WriteLine("elegir entre nacional(1) e importada(2)");
                             pimportado = false;
                             if ((auxiliar = int.Parse(Console.ReadLine())) == 1)
@@ -249,17 +250,19 @@ namespace almacen
                                       {
                                         int pre = kits[cantidad].Kprecio;
                                         int cant = kits[cantidad].Cantidad0;
+                                        int F = 200;
 
-
-                                        if (cant>=200)
+                                        if (pre >= F)
                                         {
                                             billetera = billetera - ((((pre)*3) / 100) + (pre));
                                             pkinds.Add(kits0);
                                             kits.RemoveAt(cantidad);
                                             Console.WriteLine("======================================");
                                             Console.WriteLine("El producto ha costado " + pre + " pero con un 3% de desdescuento ahora cuesta " + ((((pre) * 3) / 100) + (pre)));
+                                            Console.WriteLine("Monedero actual: " + billetera);
                                             Console.WriteLine("======================================");
                                         }
+                                     
                                         else
                                         {
                                             billetera = billetera - kits[cantidad].Kprecio;
@@ -272,6 +275,7 @@ namespace almacen
                                             Console.WriteLine("======================================");
 
                                         }
+                                        break;
                                       }
 
 
@@ -310,12 +314,18 @@ namespace almacen
                                     if (nombrep1 == pindividuals[cantidad].Pnombre)
                                     {
                                         Producto productos2 = new Producto(pindividuals[cantidad].Pnombre, pindividuals[cantidad].Pcodigo, pindividuals[cantidad].Pprecio, pindividuals[cantidad].Pimportado);
-                                        
-                                        billetera = billetera + pindividuals[cantidad].Pprecio;
+
+                                         int ppre = pindividuals[cantidad].Pprecio;
+
+                                        billetera = billetera + (((ppre*19)/100) + ppre);
                                         productos.Add(productos2);
                                         pindividuals.RemoveAt(cantidad);
 
-      
+                                       Console.WriteLine("==========================================");
+                                       Console.WriteLine("El producto valia "+ ppre + " y se le ha aplicado un IVA del 19% y se ha vendido a " + (((ppre * 19) / 100) + ppre));
+                                       Console.WriteLine("Monedero actual: " + billetera);
+                                       Console.WriteLine("==========================================");
+
 
                                     }
                                 }
@@ -341,11 +351,16 @@ namespace almacen
                                     if (nombrep01 == pkinds[cantidad].Knombre)
                                     {
                                         Pkits kits01 = new Pkits(kits[cantidad].Knombre, kits[cantidad].Kcodigo, kits[cantidad].Kprecio, kits[cantidad].Cantidad0, kits[cantidad].Pnombre, kits[cantidad].Pcodigo, kits[cantidad].Pprecio, kits[cantidad].Pimportado);
-                                        
+
+                                        int pre = kits[cantidad].Kcodigo;
+
+
+                                      if (pre >= 12)
+                                      {
                                         billetera = billetera + pkinds[cantidad].Kprecio;
                                         kits.Add(kits01);
                                         pkinds.RemoveAt(cantidad);
-
+                                      }
                                     }
                                 }
                             }
