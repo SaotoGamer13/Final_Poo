@@ -48,7 +48,7 @@ namespace almacen
         {
 
             Console.WriteLine("===========================================");
-            Console.WriteLine("Bienvenido al almacen deportivo");
+            Console.WriteLine("Bienvenido al almacen deportivo El Mundo del Quidditch");
             Console.WriteLine("===========================================");
             Console.WriteLine("");
             Console.WriteLine("1. Agregar producto" );
