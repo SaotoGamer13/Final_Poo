@@ -61,7 +61,6 @@ namespace almacen
             Console.WriteLine(" 8. vender kit");
             Console.WriteLine(" 9. lista de productos del cliente");
             Console.WriteLine(" 10. lista de kits del cliente");
-            Console.WriteLine(" 11. generar reporte");
             Console.WriteLine(" 12. monedero");
             Console.WriteLine(" 0. salir del almacen");
             Console.WriteLine("===========================================");
@@ -203,11 +202,36 @@ namespace almacen
                                     {
                                         Pindividual pindividuals2 = new Pindividual(productos[cantidad].Pnombre, productos[cantidad].Pcodigo, productos[cantidad].Pprecio, productos[cantidad].Pimportado);
                                       if (billetera >= productos[cantidad].Pprecio)
-                                      {
-                                        billetera = billetera - productos[cantidad].Pprecio;
 
-                                        pindividuals.Add(pindividuals2);
-                                        productos.RemoveAt(cantidad);
+                                      {
+
+                                        int cio = productos[cantidad].Pprecio;
+
+                                        bool nac = productos[cantidad].Pimportado;
+                                        if (nac == true)
+                                        {
+                                            billetera = billetera - (((cio*2)/100) + cio);
+
+                                            pindividuals.Add(pindividuals2);
+                                            productos.RemoveAt(cantidad);
+                                            Console.WriteLine("El producto ha costado " + cio + "mas un 2% de recargo ahora cuesta" + (((cio * 2) / 100) + cio));
+                                            Console.WriteLine("Monedero actual: " + billetera);
+                                        }
+                                        else
+                                        {
+
+                                            billetera = billetera - cio;
+
+                                            pindividuals.Add(pindividuals2);
+                                            productos.RemoveAt(cantidad);
+                                            Console.WriteLine("El producto ha costado " + cio);
+                                            Console.WriteLine("Monedero actual: " + billetera);
+
+                                            Console.WriteLine("El producto ha costado " + cio);
+                                            Console.WriteLine("Monedero actual: " + billetera);
+
+                                        }
+
                                       }
 
                                       else
@@ -258,7 +282,7 @@ namespace almacen
                                             pkinds.Add(kits0);
                                             kits.RemoveAt(cantidad);
                                             Console.WriteLine("======================================");
-                                            Console.WriteLine("El producto ha costado " + pre + " pero con un 3% de desdescuento ahora cuesta " + ((((pre) * 3) / 100) + (pre)));
+                                            Console.WriteLine("El kit ha costado " + pre + " pero con un 3% de desdescuento ahora cuesta " + ((((pre) * 3) / 100) + (pre)));
                                             Console.WriteLine("Monedero actual: " + billetera);
                                             Console.WriteLine("======================================");
                                         }
@@ -270,7 +294,7 @@ namespace almacen
                                             kits.RemoveAt(cantidad);
 
                                             Console.WriteLine("======================================");
-                                            Console.WriteLine("El producto ha costado " + pre);
+                                            Console.WriteLine("El kit ha costado " + pre);
                                             Console.WriteLine("Monedero actual: " + billetera);
                                             Console.WriteLine("======================================");
 
@@ -352,15 +376,26 @@ namespace almacen
                                     {
                                         Pkits kits01 = new Pkits(kits[cantidad].Knombre, kits[cantidad].Kcodigo, kits[cantidad].Kprecio, kits[cantidad].Cantidad0, kits[cantidad].Pnombre, kits[cantidad].Pcodigo, kits[cantidad].Pprecio, kits[cantidad].Pimportado);
 
-                                        int pre = kits[cantidad].Kcodigo;
-
+                                      int pre = kits[cantidad].Kcodigo;
+                                      int pr = pkinds[cantidad].Kprecio;
 
                                       if (pre >= 12)
                                       {
+                                        billetera = billetera + ((pr*5)/100 - pr);
+                                        kits.Add(kits01);
+                                        pkinds.RemoveAt(cantidad);
+                                        Console.WriteLine("precio de kit: " + pr + " valor de kit con descuento: "+ ((pr * 5) / 100 - pr));
+                                        Console.WriteLine("Monedero actual: " + billetera);
+                                    }
+                                      else
+                                      {
+
                                         billetera = billetera + pkinds[cantidad].Kprecio;
                                         kits.Add(kits01);
                                         pkinds.RemoveAt(cantidad);
-                                      }
+                                        Console.WriteLine("precio de kit: " + pr);
+                                        Console.WriteLine("Monedero actual: " + billetera);
+                                    }
                                     }
                                 }
                             }
@@ -427,14 +462,9 @@ namespace almacen
                             }
                             break;
 
+
+
                         case 11:
-
-
-
-                            break;
-
-
-                        case 12:
                             Console.WriteLine("==============================================");
                             Console.WriteLine("El dineor actual del cliente es: " + billetera);
                             Console.WriteLine("==============================================");
