@@ -19,3 +19,19 @@ C:\Users\juan\Documents\GitHub\Final_Poo\almacen\almacen\obj\Debug\net5.0\almace
 C:\Users\juan\Documents\GitHub\Final_Poo\almacen\almacen\obj\Debug\net5.0\ref\almacen.dll
 C:\Users\juan\Documents\GitHub\Final_Poo\almacen\almacen\obj\Debug\net5.0\almacen.pdb
 C:\Users\juan\Documents\GitHub\Final_Poo\almacen\almacen\obj\Debug\net5.0\almacen.genruntimeconfig.cache
+D:\Usuarios\Documentos\SEMESTRE 2 2021\POO\Final_Poo\almacen\almacen\bin\Debug\net5.0\almacen.exe
+D:\Usuarios\Documentos\SEMESTRE 2 2021\POO\Final_Poo\almacen\almacen\bin\Debug\net5.0\almacen.deps.json
+D:\Usuarios\Documentos\SEMESTRE 2 2021\POO\Final_Poo\almacen\almacen\bin\Debug\net5.0\almacen.runtimeconfig.json
+D:\Usuarios\Documentos\SEMESTRE 2 2021\POO\Final_Poo\almacen\almacen\bin\Debug\net5.0\almacen.runtimeconfig.dev.json
+D:\Usuarios\Documentos\SEMESTRE 2 2021\POO\Final_Poo\almacen\almacen\bin\Debug\net5.0\almacen.dll
+D:\Usuarios\Documentos\SEMESTRE 2 2021\POO\Final_Poo\almacen\almacen\bin\Debug\net5.0\ref\almacen.dll
+D:\Usuarios\Documentos\SEMESTRE 2 2021\POO\Final_Poo\almacen\almacen\bin\Debug\net5.0\almacen.pdb
+D:\Usuarios\Documentos\SEMESTRE 2 2021\POO\Final_Poo\almacen\almacen\obj\Debug\net5.0\almacen.csproj.AssemblyReference.cache
+D:\Usuarios\Documentos\SEMESTRE 2 2021\POO\Final_Poo\almacen\almacen\obj\Debug\net5.0\almacen.GeneratedMSBuildEditorConfig.editorconfig
+D:\Usuarios\Documentos\SEMESTRE 2 2021\POO\Final_Poo\almacen\almacen\obj\Debug\net5.0\almacen.AssemblyInfoInputs.cache
+D:\Usuarios\Documentos\SEMESTRE 2 2021\POO\Final_Poo\almacen\almacen\obj\Debug\net5.0\almacen.AssemblyInfo.cs
+D:\Usuarios\Documentos\SEMESTRE 2 2021\POO\Final_Poo\almacen\almacen\obj\Debug\net5.0\almacen.csproj.CoreCompileInputs.cache
+D:\Usuarios\Documentos\SEMESTRE 2 2021\POO\Final_Poo\almacen\almacen\obj\Debug\net5.0\almacen.dll
+D:\Usuarios\Documentos\SEMESTRE 2 2021\POO\Final_Poo\almacen\almacen\obj\Debug\net5.0\ref\almacen.dll
+D:\Usuarios\Documentos\SEMESTRE 2 2021\POO\Final_Poo\almacen\almacen\obj\Debug\net5.0\almacen.pdb
+D:\Usuarios\Documentos\SEMESTRE 2 2021\POO\Final_Poo\almacen\almacen\obj\Debug\net5.0\almacen.genruntimeconfig.cache
